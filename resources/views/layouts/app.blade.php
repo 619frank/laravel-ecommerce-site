@@ -18,6 +18,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/default.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/component.css')}}" />
+	
+    <script src="{{ asset('js/modernizr.custom.js')}}"></script>
 </head>
 <body>
     <div id="app">
@@ -72,9 +77,10 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
     </div>
+        {{--<main class="py-4">--}}
+            @yield('content')
+        {{--</main>--}}
+   @yield('scripts')
 </body>
 </html>
