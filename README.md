@@ -6,4 +6,4 @@ this is how we change a regular user to admin user
 
 $ php artisan tinker
 >>> use App\User;
->>>User::where('email', 'connorleech@gmail.com')->update(['type' => 'admin']);
+>>>User::where('email', 'admin@admin.com')->update(['type' => 'admin']);
