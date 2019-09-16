@@ -11,8 +11,9 @@ class ProductController extends Controller
     public function index($product_id = null, $category_id = null)
     {
         if($product_id == null && $category_id == null){
-            
-            return view('products'); 
+            $product = new Product;
+            $products = $product->all(); 
+            return view('products.products',['products'=>$products]); 
         }elseif($product_id != null) {
 
         }elseif($category_id != null) {
@@ -22,7 +23,9 @@ class ProductController extends Controller
 
     public function adminIndex()
     {
-        return view('admin.products.products');
+        $product = new Product; 
+        $products = $product->all();
+        return view('admin.products.products',['products'=>$products]);
     }
 
     public function getCreateProductForm()

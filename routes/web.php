@@ -25,7 +25,7 @@ Route::get('/admin', 'AdminController@admin')
     ->middleware('is_admin')
     ->name('admin');
 
-Route::get('/products','ProductController@index');
+Route::get('/products','ProductController@index')->name('products');
 
 Route::get('/products/{product_id}','ProductController@index');
 
@@ -45,4 +45,8 @@ Route::get('/admin/customers/','CustomerController@adminIndex')->middleware('is_
 
 Route::get('/admin/orders/','OrderController@adminIndex')->middleware('is_admin')->name('admin_orders');
 
+Route::get('/myaccount','CustomerController@index')->middleware('auth')->name('my_account');
 
+Route::get('/addtocart/{product_id}/','OrderController@addToCart')->middleware('auth')->name('addtocart');
+
+Route::post('/placeorder','OrderController@placeOrder')->middleware('auth')->name('placeorder');

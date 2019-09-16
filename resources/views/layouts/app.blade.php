@@ -21,7 +21,9 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/default.css')}}" />
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/component.css')}}" />
-	
+
+    @yield('styles')
+
     <script src="{{ asset('js/modernizr.custom.js')}}"></script>
 </head>
 <body>
@@ -81,6 +83,8 @@
         {{--<main class="py-4">--}}
             @yield('content')
         {{--</main>--}}
+        
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
    @yield('scripts')
 </body>
 </html>
