@@ -9,7 +9,7 @@
                     {{-- session('status') --}}
                 {{--</div>--}}
             {{--@endif--}}                
-            <div class="container">
+        <div class="container">
 			<header class="clearfix">
 				<h1>Admin Dashboard</h1>
             </header>	
@@ -18,13 +18,13 @@
 					<div class="cbp-hsinner">
 						<ul class="cbp-hsmenu">
 							<li>
-								<a href="#">Products</a>
+								<a href="{{route('admin_products')}}">Products</a>
 							</li>
 							<li>
-								<a href="#">Orders</a>
+								<a href="{{route('admin_orders')}}">Orders</a>
                             </li>
 							<li>
-								<a href="#">Customers</a>
+								<a href="{{route('admin_customers')}}">Customers</a>
                             </li>
 						</ul>
 					</div>
@@ -33,10 +33,11 @@
 		</div>
         {{--</div>--}}
     {{--</div>--}}
+    @yield('admincontent')
 </div>
 @endsection
 @section('scripts')
-    <script src="js/cbpHorizontalSlideOutMenu.min.js"></script>
+    <script src="{{asset('js/cbpHorizontalSlideOutMenu.min.js')}}"></script>
     <script>
         var menu = new cbpHorizontalSlideOutMenu( document.getElementById( 'cbp-hsmenu-wrapper' ) );
     </script>
